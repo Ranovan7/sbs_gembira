@@ -1,0 +1,72 @@
+{% extends 'main/base.html' %}
+
+{% block css %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="sdm">
+    <div>
+      <h1 class="title">
+        Sales
+      </h1>
+    </div>
+
+    <div id="sales">
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr class="text-center">
+                      <th>No</th>
+                      <th>Nama</th>
+                      <th>Kode</th>
+                      <th>Username</th>
+                      <th>Telepon</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-center">
+                      {% for s in sales %}
+                      <tr>
+                          <td>{{ forloop.counter }}</td>
+                          <td>{{ s.nama }}</td>
+                          <td>{{ s.kode | upper }}</td>
+                          <td align="center">
+                              {% if s.user %}<span>{{ s.user.username }}</span>{% else %}
+                              <span>
+                                  <a type="button"
+                                    href="{% url 'sales-user' sales_id=s.id %}"
+                                    class="btn btn-sm btn-primary">
+                                      <i class="fas fa-user-plus"></i>
+                                  </a>
+                              </span>
+                              {% endif %}
+                          </td>
+                          <td>{{ s.telepon }}</td>
+                          <td>
+                              <a type="button"
+                                href="#">
+                                  <i class="fas fa-key"></i>
+                              </a>
+                          </td>
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

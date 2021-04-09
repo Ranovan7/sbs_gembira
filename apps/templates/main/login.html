@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+
+{% block css %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block content %}
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md">
+
+      </div>
+      <div class="col-md">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">SBSehati Login</h5>
+                <form action="/login" method="post">
+                    {% csrf_token %}
+                  <div class="pt-2 pb-2">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-control" type="text" name="username" value="">
+                  </div>
+                  <div class="pt-2 pb-2">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" type="password" name="password" value="">
+                  </div>
+                  <div class="pt-2 pb-2">
+                    <input class="btn btn-primary" type="submit" value="Login">
+                  </div>
+                </form>
+            </div>
+        </div>
+      </div>
+      <div class="col-md">
+
+      </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+<script>
+
+</script>
+{% endblock %}
