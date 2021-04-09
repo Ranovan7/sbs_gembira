@@ -14,6 +14,10 @@
 <br/>`# pipenv run python manage.py makemigrations`
 <br/>`# pipenv run python manage.py migrate`
 
+### Create User with 'admin' Role
+
+- `# pipenv run python manage.py createsuperuser`
+
 ### Run Development
 
 - `# pipenv run python manage.py runserver`
